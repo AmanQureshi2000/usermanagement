@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>User Management System</h1>
+            <p class="description">Create, view, update, and delete users from the API</p>
+        </header>
+
+        <div class="main-content">
+            <div class="form-section">
+                <h2 class="section-title">Create New User</h2>
+                <form id="createUserForm">
+                    <div class="form-group">
+                        <label for="username">Username *</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password *</label>
+                        <div class="password-wrapper">
+                            <input type="password" id="password" name="password" required>
+                            <button type="button" class="toggle-password" id="togglePassword">👁️</button>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="first_name">First Name *</label>
+                        <input type="text" id="first_name" name="first_name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="last_name">Last Name *</label>
+                        <input type="text" id="last_name" name="last_name" required>
+                    </div>
+
+                    <button type="submit">Create User</button>
+                </form>
+            </div>
+
+            <div class="users-section">
+                <h2 class="section-title">Existing Users</h2>
+                <div class="user-list" id="userList">
+                    <div class="loading">Loading users...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit User Modal -->
+    <div class="modal" id="editUserModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Edit User</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <form id="editUserForm" class="modal-form">
+                <input type="hidden" id="editUserId">
+                <div class="form-group">
+                    <label for="editUsername">Username *</label>
+                    <input type="text" id="editUsername" name="username" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="editEmail">Email Address *</label>
+                    <input type="email" id="editEmail" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="editPassword">Password *</label>
+                    <input type="password" id="editPassword" name="password">
+                </div>
+
+                <div class="form-group">
+                    <label for="editFirstName">First Name *</label>
+                    <input type="text" id="editFirstName" name="first_name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="editLastName">Last Name *</label>
+                    <input type="text" id="editLastName" name="last_name" required>
+                </div>
+
+                <div class="modal-actions">
+                    <button type="button" class="cancel-btn" id="cancelEdit">Cancel</button>
+                    <button type="submit" class="update-btn">Update User</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="notification" id="notification"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
